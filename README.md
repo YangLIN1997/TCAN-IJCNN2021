@@ -29,8 +29,8 @@ If you find TCAN and the new datasets useful in your research, please consider a
 @inproceedings{Yang21TCAN,
               author    = {Yang Lin and Irena Koprinska and Mashud Rana},
               title     = {Temporal Convolutional Attention Neural Networks for Time Series Forecasting},
-              year = {2021},
-              booktitle={Proceedings of the IEEE International Joint Conference on Neural Networks (IJCNN)},
+              year      = {2021},
+              booktitle ={Proceedings of the IEEE International Joint Conference on Neural Networks (IJCNN)},
 }
 ```
 
