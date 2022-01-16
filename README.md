@@ -17,7 +17,7 @@ Temporal Convolutional Neural Networks (TCNNs) have been applied for various seq
 This repository provides an implementation for TCAN as described in the paper:
 
 > Temporal Convolutional Attention Neural Networks for Time Series Forecasting.
-> Yang Lin, Irena Koprinska, Mashud Rana
+> Yang Lin, Irena Koprinska, Mashud Rana.
 > IJCNN, 2021.
 > [[Paper]](https://www.researchgate.net/profile/Yang-Lin-27/publication/354797495_Temporal_Convolutional_Attention_Neural_Networks_for_Time_Series_Forecasting/links/61558599ab3c1324134c8883/Temporal-Convolutional-Attention-Neural-Networks-for-Time-Series-Forecasting.pdf)
 
