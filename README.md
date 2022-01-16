@@ -1,4 +1,4 @@
-# SSDNet
+# TCAN
 
 Author: [Yang Lin](https://yanglin1997.github.io/)
 
@@ -6,31 +6,31 @@ E-mail: linyang1997@yahoo.com.au
 
 ===========================================================================
 
-A **PyTorch** implementation of **SSDNet (ICDM 2021)**.
+A **PyTorch** implementation of **TCAN (IJCNN 2021)**.
 
-<div style="text-align:center"><img src ="SSDNet.jpg" ,width=100/></div>
+<div style="text-align:center"><img src ="TCAN.jpg" ,width=100/></div>
 
 ## Abstract
 <p align="justify">
-In this paper, we present SSDNet, a novel deep learning approach for time series forecasting. SSDNet combines the Transformer architecture with state space models to provide probabilistic and interpretable forecasts, including trend and seasonality components and previous time steps important for the prediction. The Transformer architecture is used to learn the temporal patterns and estimate the parameters of the state space model directly and efficiently, without the need for Kalman filters. We comprehensively evaluate the performance of SSDNet on five data sets, showing that SSDNet is an effective method in terms of accuracy and speed, outperforming state-of-the-art deep learning and statistical methods, and able to provide meaningful trend and seasonality components.</p>
+Temporal Convolutional Neural Networks (TCNNs) have been applied for various sequence modelling tasks including time series forecasting. However, TCNNs may require many convolutional layers if the input sequence is long and are not able to provide interpretable results. In this paper, we present TCAN, a novel deep learning approach that employs attention mechanism with temporal convolutions for probabilistic forecasting, and demonstrate its performance in a case study for solar power forecasting. TCAN uses the hierarchical convolutional structure of TCNN to extract temporal dependencies and then uses sparse attention to focus on the important timesteps. The sparse attention layer of TCAN enables an extended receptive field without requiring a deeper architecture and allows for interpretability of the forecasting results. An evaluation using three large solar power data sets demonstrates that TCAN outperforms several state-of-the-art deep learning forecasting models including TCNN in terms of accuracy. TCAN requires less number of convolutional layers than TCNN for an extended receptive field, is faster to train and is able to visualize the most important timesteps for the prediction.</p>
 
-This repository provides an implementation for SSDNet as described in the paper:
+This repository provides an implementation for TCAN as described in the paper:
 
-> SSDNet: State Space Decomposition Neural Network for Time Series Forecasting.
+> Temporal Convolutional Attention Neural Networks for Time Series Forecasting.
 > Yang Lin, Irena Koprinska, Mashud Rana
-> ICDM, 2021.
-> [[Paper]](https://arxiv.org/pdf/2112.10251.pdf)
+> IJCNN, 2021.
+> [[Paper]](https://www.researchgate.net/profile/Yang-Lin-27/publication/354797495_Temporal_Convolutional_Attention_Neural_Networks_for_Time_Series_Forecasting/links/61558599ab3c1324134c8883/Temporal-Convolutional-Attention-Neural-Networks-for-Time-Series-Forecasting.pdf)
 
 **Citing**
 
-If you find SSDNet and the new datasets useful in your research, please consider adding the following citation:
+If you find TCAN and the new datasets useful in your research, please consider adding the following citation:
 
 ```bibtex
-@inproceedings{Yang21SSDNet,
+@inproceedings{Yang21TCAN,
               author    = {Yang Lin and Irena Koprinska and Mashud Rana},
-              title     = {SSDNet: State Space Decomposition Neural Network for Time Series Forecasting},
+              title     = {Temporal Convolutional Attention Neural Networks for Time Series Forecasting},
               year = {2021},
-              booktitle={Proceedings of the IEEE International Conference on Data Mining (ICDM)},
+              booktitle={Proceedings of the IEEE International Joint Conference on Neural Networks (IJCNN)},
 }
 ```
 
@@ -42,10 +42,6 @@ Hanergy: http://dkasolarcentre.com.au/source/alice-springs/dka-m16-b-phase
 
 Solar: https://www.nrel.gov/grid/solar-power-data.html
 
-Electricity: https://archive.ics.uci.edu/ml/datasets/ElectricityLoadDiagrams20112014
-
-Exchange: https://github.com/laiguokun/multivariate-time-series-data/tree/master/exchange_rate
-
 
 
 ## To run:
@@ -56,8 +52,6 @@ Exchange: https://github.com/laiguokun/multivariate-time-series-data/tree/master
    python preprocess_Sanyo.py
    python preprocess_Hanergy.py
    python preprocess_solar.py
-   python preprocess_elect.py
-   python preprocess_exchange.py
    ```
 
 2. Restore the saved model and make prediction:
@@ -66,8 +60,6 @@ Exchange: https://github.com/laiguokun/multivariate-time-series-data/tree/master
    python train.py --dataset='Sanyo' --model-name='base_model_Sanyo' --restore-file='best'
    python train.py --dataset='Hanergy' --model-name='base_model_Hanergy' --restore-file='best'
    python train.py --dataset='Solar' --model-name='base_model_Solar' --restore-file='best'
-   python train.py --dataset='elect' --model-name='base_model_elect' --restore-file='best'
-   python train.py --dataset='exchange' --model-name='base_model_exchange' --restore-file='best'
    ```
 
 3. Train the model:
@@ -76,6 +68,4 @@ Exchange: https://github.com/laiguokun/multivariate-time-series-data/tree/master
    python train.py --dataset='Sanyo' --model-name='base_model_Sanyo' 
    python train.py --dataset='Hanergy' --model-name='base_model_Hanergy'
    python train.py --dataset='Solar' --model-name='base_model_Solar' 
-   python train.py --dataset='elect' --model-name='base_model_elect' 
-   python train.py --dataset='exchange' --model-name='base_model_exchange' 
    ```
