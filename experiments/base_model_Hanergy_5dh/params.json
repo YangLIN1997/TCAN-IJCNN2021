@@ -1,0 +1,21 @@
+{
+    "learning_rate": 0.005,
+    "early_stopping": true,
+    "batch_size": 512,
+    "d_embedding": 12,
+    "d_model": 8,
+    "n_position": 40,
+    "num_epochs": 200,
+    "train_window": 120,
+    "test_window": 120,
+    "predict_start": 20,
+    "test_predict_start": 20,
+    "predict_steps": 20,
+    "sample_times": 200,
+    "dropout": 0.1,
+    "predict_batch": 2560,
+    "n_channel": [12,8,4],
+    "d_kernel": 3,
+    "stride": 1,
+    "n_id": 0
+}
